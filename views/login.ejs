@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login</h2>
+    
+        <% if (locals.register_error) { 
+            register_error.forEach(function(error_msg){ %>
+            <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+          <% });
+          } %>
+
+    <form action="/login" method="POST">
+        <div>
+            <label for="email">E-Mail</label>
+        <input type="email" name="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">password</label>
+        <input type="password" name="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">Register</a>
+    
+</body>
+</html>
